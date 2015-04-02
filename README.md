@@ -26,6 +26,22 @@ returnJSON: boolean, do you want the data returned as JSON?
 
 Returns: string or JSON
 
-### makeGeoJSON
+```
+var tdot = require('./tdot');
+
+tdot.setKey('xxxxxxxxxxxxxx');
+
+tdot.getData('RoadwayIncidents', function(result, name){
+  console.log(name);
+  console.log(result);
+});
+```
+
+### makeGeoJSON(tdotJSON)
+
+#### Properties
+
+tdotJSON: JSON, TDOT formatted JSON
 
 Returns: [GeoJSON](http://geojson.org/geojson-spec.html)
+
