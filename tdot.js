@@ -9,12 +9,13 @@ var _https = require('https'),
         "type": "Point",
         "coordinates": [coords.lng, coords.lat]
       },
-      "properties": _properties(properties)
+      "properties": _properties(tdotitem.id, properties)
     };
   },
-  _properties = function (tdotprops) {
+  _properties = function (id, tdotprops) {
     delete tdotprops.locations;
     delete tdotprops.location;
+    tdotprops.id = id;
     return tdotprops;
   };
 
