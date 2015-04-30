@@ -4,3 +4,7 @@ RoadwayCameras.js
 RoadwayIncidents.js
 RoadwayMessageSigns.js
 RoadwayOperations.js
+
+*.swp
+*.swo
+*~
