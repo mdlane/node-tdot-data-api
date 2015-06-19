@@ -25,7 +25,7 @@ module.exports = {
       return _key = key.toString();
     }
     else {
-      return 'You did not enter a correct value';
+      throw new Error('You did not enter a correct value');
     }
   },
   getKey: function(){
@@ -41,10 +41,10 @@ module.exports = {
       }
     };
     if (typeof _key !== 'string') {
-      return 'Please set the key';
+      throw new Error('Please set the key');
     }
     if (typeof endpoint !== 'string') {
-      return 'The endpoint must be a string';
+      throw new Error('The endpoint must be a string');
     }
     _https.get(options, function (res) {
       //console.log('STATUS: ' + res.statusCode);

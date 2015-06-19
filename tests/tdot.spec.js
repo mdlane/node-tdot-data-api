@@ -13,9 +13,12 @@ describe('tdot', function() {
 
   describe('setKey', function() {
 
-    it('should require a key', function() {
-      var keyResponse = tdot.setKey();
-      expect(keyResponse).toBe('You did not enter a correct value');
+    it('should require a key', function () {
+      //requires adtl function to handle thrown errors http://bit.ly/1fmCqts
+      var keyResponse = function () {
+        tdot.setKey();
+      };
+      expect(keyResponse).toThrow(new Error('You did not enter a correct value'));
     });
 
     it('should return key as a string', function() {
@@ -51,8 +54,10 @@ describe('tdot', function() {
     });
 
     it('should require endpoint be a string', function() {
-      var errorResult = tdot.getData(A_NUMBER, function() {});
-      expect(errorResult).toBe('The endpoint must be a string');
+      var errorResult = function () {
+        tdot.getData(A_NUMBER, function () { });
+      };
+      expect(errorResult).toThrow(new Error('The endpoint must be a string'));
     });
 
     it('should call https.get() function', function() {

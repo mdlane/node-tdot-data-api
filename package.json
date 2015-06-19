@@ -1,0 +1,12 @@
+{
+  "name": "node-tdot-data-api",
+  "version": "0.0.1",
+  "description": "Module for retrieving data from the TDOT Data API. Will create GeoJSON from TDOT JSON that has location information.",
+  "scripts": {
+    "test": "./node_modules/.bin/jasmine-node tests"
+  },
+  "author": "Matt Lane",
+  "dependencies": {
+    "jasmine-node": "^1.14.5"
+  }
+}
